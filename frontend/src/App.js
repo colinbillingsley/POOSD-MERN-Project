@@ -1,4 +1,7 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
+import React from 'react'
+  // NODE_OPTIONS="--openssl-legacy-provider" npm run build
+
 
 // pages & components
 import Home from './pages/Home'
