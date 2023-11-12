@@ -1,0 +1,75 @@
+/*
+    CSS file for home.js, login.js,, signup.js
+    Background images/videos will be held in ./images/...
+*/
+
+body{
+    background-image: url(./images/zelda-horse.gif);
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    background-position: center;
+    overflow: hidden;
+}
+
+.video-bg {
+        /*background-image: url(./images/TOTKmainpage.gif);*/
+        background-size: cover;
+        background-repeat: no-repeat;
+        min-height: 100vh;
+        background-position: center;
+}
+form {
+    max-width: 400px;
+    margin: 0 auto;
+}
+h2 {
+    text-align: center;
+    color: white;
+}
+
+label {
+    color:white;
+    display: block;
+    text-align: center;
+    font-size: larger;
+    font: bold;
+}
+
+span {
+    color: white;
+}
+
+input {
+    width: 75%;
+    padding: 6px;
+    display: block;
+    margin-bottom: 16px; /* Adjust the space between inputs */
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    text-align: center;
+    margin: 10px auto;
+}
+
+.centered-box {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+    box-sizing: border-box;
+    padding: 10px;
+    width:30vw;
+    position:absolute;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    top: 30%;
+    left: 35%;
+    padding-bottom: 20px;
+    text-align: center;
+}
+
+button {
+    display: block;
+    margin:auto;
+}

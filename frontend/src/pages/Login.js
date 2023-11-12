@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useLogin } from '../hooks/useLogin'
+import './Pages.css';
 
 
 const Login = () => {
@@ -18,7 +19,8 @@ const Login = () => {
     }
 
   return (
-    <form className='loginForm' onSubmit={handleSubmit}>
+    <div className='centered-box'>
+    <form className='login-titles' onSubmit={handleSubmit}>
         <h2>Login</h2>
         
         <label>Email:</label>
@@ -41,6 +43,7 @@ const Login = () => {
             <span>Don't have an account?</span>
             <Link to='/signup'><button>Create Account</button></Link>
     </form>
+    </div>
   )
 }
 
