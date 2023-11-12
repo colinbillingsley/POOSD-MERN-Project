@@ -72,4 +72,10 @@ input {
 button {
     display: block;
     margin:auto;
+    font-size: 13px;
+    padding: 10px 12px;
+    border-radius: 8px;
+    line-height: 1em;
+    text-decoration: none;
+    background: linear-gradient(to right, #00cc66, #33cc33);
 }
