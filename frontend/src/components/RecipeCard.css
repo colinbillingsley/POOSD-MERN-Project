@@ -20,6 +20,10 @@
     border-radius: 30px;
   }
 
+.recipe-card img {
+    -webkit-user-drag: none;
+}
+
 .recipe-id {  
     color: #73652b;
 }
