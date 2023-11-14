@@ -9,7 +9,7 @@ const Home = () => {
   return (
     <div className="bg1">
       <Navbar />
-      <h3>All Recipes</h3>
+      <h2>All Recipes</h2>
       <Carousel />
     </div>
   )

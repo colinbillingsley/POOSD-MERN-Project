@@ -9,6 +9,7 @@
     padding: 20px; /* Space inside the card */
     box-sizing: border-box;
     text-align: center;
+    min-width: 300px;
 }
 .recipe-card:before {
     content: '';

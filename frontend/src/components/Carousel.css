@@ -3,3 +3,13 @@
     justify-content: center;
     gap: 20px;
 }
+
+.nextButton {
+    display: flex;
+    justify-content: center;
+    margin-top: 16px;
+}
+
+.nextButton button {
+    margin: 0 8px;
+}
