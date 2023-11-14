@@ -33,13 +33,14 @@
     }
 }
 
-.bg{
-    background-image: url(./images/zelda-horse.gif);
+.bg {
+    background-image: url(./images/linkChillin.gif);
     background-size: cover;
     background-repeat: no-repeat;
     min-height: 100vh;
     background-position: center;
     overflow: hidden;
+    z-index: -1;
 }
 
 
@@ -105,7 +106,7 @@ input {
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    top: 28%;
+    top: 25%;
     left: 34%;
     padding-bottom: 20px;
     text-align: center;

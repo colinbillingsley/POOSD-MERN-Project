@@ -1,0 +1,10 @@
+
+.bg1{
+    background-image: url(./images/zelda-horse.gif);
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    background-position: center;
+    overflow: hidden;
+
+}

@@ -1,13 +1,14 @@
 import Navbar from "../components/Navbar"
 import React from 'react'
+import './Home.css'
 
 // home page we transition to after login
 const Home = () => {
 
   return (
-    <div className="home">
+    <div className="bg1">
       <Navbar />
-      <h1>HOME PAGE</h1>
+      <h3>HOME PAGE</h3>
     </div>
   )
 }
