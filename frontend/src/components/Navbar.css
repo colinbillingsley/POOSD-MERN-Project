@@ -1,3 +1,16 @@
-* {
-    box-sizing: border-box;
-} 
+nav {
+    background-color: teal;
+    color: white;
+}
+
+ul{
+    margin: 0;
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+li {
+    cursor: pointer;
+}

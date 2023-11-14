@@ -1,4 +1,5 @@
-import Navbar from "../components/Navbar"
+import Navbar from '../components/Navbar'
+import Carousel from '../components/Carousel'
 import React from 'react'
 import './Home.css'
 
@@ -8,7 +9,8 @@ const Home = () => {
   return (
     <div className="bg1">
       <Navbar />
-      <h3>HOME PAGE</h3>
+      <h3>All Recipes</h3>
+      <Carousel />
     </div>
   )
 }

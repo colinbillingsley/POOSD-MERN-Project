@@ -10,17 +10,22 @@ const Navbar = () => {
   const { logout } = useLogout()
 
   // function calls logout to logout user
-  const handleClick = () => {
+  const handleClick = () => { 
       logout()
   }
 
   // this will be our navbar
   return (
-    <header>
-        { /*<span>Tears of Thanksgiving</span>
-        <span>{`Hello ${user.email}`}</span>*/}
-        <button onClick={handleClick}>Logout</button>
-    </header>
+     /*<span>Tears of Thanksgiving</span>
+        <span>{`Hello ${user.email}`}</span>*/
+      <nav className='navbar'>
+        <ul className='nav-list'>
+            <li>All Recipes</li>
+            <li>Saved Recipes</li>
+            <li>Sort Recipes</li>
+            <li><button onClick={handleClick}>Logout</button></li>
+        </ul>
+      </nav>
   )
 }
 

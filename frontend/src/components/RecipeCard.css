@@ -1,0 +1,48 @@
+.recipe-card{
+    background: radial-gradient(circle at center top, #dcb96a, #aea174);
+    border-radius: 30px;
+    width: 300px;
+    height: 400px;
+    border: 2px solid #dcb96a; /* Outer border */
+    position: relative;
+    box-shadow: inset 0 0 10px #8c6a3e; /* Inner shadow */
+    padding: 20px; /* Space inside the card */
+    box-sizing: border-box;
+    text-align: center;
+}
+.recipe-card:before {
+    content: '';
+    position: absolute;
+    top: 5px; left: 5px; right: 5px; bottom: 5px; /* Adjust to change the inner border position */
+    border: 1px solid #766a22; /* Inner border with a golden tone */
+    pointer-events: none;
+    border-radius: 30px;
+  }
+
+.recipe-id {  
+    color: #73652b;
+}
+  
+.recipe-title {
+    margin: 0;
+    color: #4b4002;
+    text-align: center;
+}
+
+.recipe-details {
+    color: #6e612b;
+    font-style: italic;
+}
+  
+.recipe-image {
+    width: 50%;
+    height: auto;
+    object-fit: cover;
+}
+
+.ingredients-title{
+    padding: 0;
+    text-align: center;
+    color:#6e612b;
+}
+  
