@@ -38,11 +38,11 @@ const Login = () => {
                     value={password}
                 />
 
-                <button className='button1' disabled={isLoading}>Log In</button>
+                <button className='fancyButton btnEdit2' disabled={isLoading}>Log In</button>
                 {error && <div className='error'>{error}</div> }
 
                 <h2>Don't have an account?</h2>
-                <Link to='/signup' style={{ textDecoration: 'none' }}><button className='button1'>Create Account</button></Link>
+                <Link to='/signup' style={{ textDecoration: 'none' }}><button className='fancyButton'>Create Account</button></Link>
         </form>
         </div>
     </div>

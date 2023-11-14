@@ -37,10 +37,10 @@ const Signup = () => {
                 value={password}
             />
 
-            <button className='signupButtons' disabled={isLoading}>Sign Up</button>
+            <button className='fancyButton btnEdit1' disabled={isLoading}>Sign Up</button>
             {error && <div className='error'>{error}</div> }
 
-            <Link to='/login' style={{ textDecoration: 'none' }}><button className='signupButtons'>Back</button></Link>
+            <Link to='/login' style={{ textDecoration: 'none' }}><button className='fancyButton btnEdit1'>Back</button></Link>
         </form>
         </div>
     </div>
