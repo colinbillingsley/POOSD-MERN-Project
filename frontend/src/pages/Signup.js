@@ -16,6 +16,7 @@ const Signup = () => {
     }
 
   return (
+    <div className='centered-box'>
     <form className='signupForm' onSubmit={handleSubmit}>
         <h2>Signup</h2>
         
@@ -36,6 +37,7 @@ const Signup = () => {
         <button disabled={isLoading}>Sign Up</button>
         {error && <div className='error'>{error}</div> }
     </form>
+    </div>
   )
 }
 

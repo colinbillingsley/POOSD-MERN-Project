@@ -18,16 +18,16 @@ function App() {
         <div className="pages">
           <Routes>
             <Route 
-              path="/"
+              path="/home"
               element={user ? <Home /> : <Navigate to='/login' />}
             />
             <Route 
               path="/login"
-              element={!user ? <Login /> : <Navigate to='/' />}
+              element={!user ? <Login /> : <Navigate to='/home' />}
             />
             <Route
               path="/signup"
-              element={!user ? <Signup /> : <Navigate to='/' />}
+              element={!user ? <Signup /> : <Navigate to='/login' />}
             />
           </Routes>
         </div>
