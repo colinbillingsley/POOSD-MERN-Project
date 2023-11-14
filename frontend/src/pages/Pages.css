@@ -16,6 +16,10 @@
     font-family: 'Triforce';
     src: url('../fonts/Triforce.ttf')
 }
+@font-face {
+    font-family: 'Wboz';
+    src: url('../fonts/WBOZ.ttf')
+}
   
 
 @media (max-width: 768px) {
@@ -41,6 +45,8 @@
 
 h1 {
     /*Titles*/
+    border-bottom: 2px solid white;
+    display: inline-block;
     text-align: center;
     color: white;
     font-size: 2em;
@@ -65,8 +71,8 @@ label {
     color:white;
     display: block;
     text-align: center;
-    font-size: 1.4em;
-    letter-spacing: 1.5px;
+    font-size: 1.5em;
+    letter-spacing: 3px;
     font-family: 'HyliaSerif';
 }
 
@@ -75,7 +81,9 @@ span {
 }
 
 input {
-    width: 50%;
+    width: 65%;
+    font-family: 'Comic Sans MS';
+    font-size: 1.1em;
     padding: 6px;
     display: block;
     margin-bottom: 16px; /* Adjust the space between inputs */
@@ -87,8 +95,8 @@ input {
 }
 
 .centered-box {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
-    background-color: rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 1);
+    background-color: rgba(0, 0, 0, 0.35);
     border-radius: 4px;
     box-sizing: border-box;
     padding: 7px;
@@ -101,30 +109,6 @@ input {
     left: 34%;
     padding-bottom: 20px;
     text-align: center;
-}
-
-.button1 {
-    display: block;
-    margin:auto;
-    font-size: 13px;
-    padding: 10px 12px;
-    border-radius: 8px;
-    line-height: 1em;
-    text-decoration: none;
-    background: linear-gradient(to right, #00cc66, #33cc33);
-    text-decoration: none;
-}
-
-
-.signupButtons {
-    display: flex;
-    margin: 8px auto;
-    font-size: 13px;
-    padding: 10px 12px;
-    border-radius: 8px;
-    line-height: 1em;
-    text-decoration: none;
-    background: linear-gradient(to right, #00cc66, #33cc33);
 }
 .fancyButton {
         color: green;
