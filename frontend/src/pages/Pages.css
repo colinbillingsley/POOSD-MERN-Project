@@ -1,9 +1,33 @@
 /*
     CSS file for home.js, login.js,, signup.js
     Background images/videos will be held in ./images/...
+    Fonts in ../fonts
 */
 
-body{
+@font-face {
+    font-family: 'HyliaSerif';
+    src: url('../fonts/HyliaSerif.otf'),
+    /* Add more formats if needed, and specify the paths accordingly */
+}
+@font-face {
+    font-family: 'Zelda';
+    src: url('../fonts/Zelda.otf'),
+    /* Add more formats if needed, and specify the paths accordingly */
+}
+  
+
+@media (max-width: 768px) {
+    /*Mobile view css settings*/
+    .centered-box {
+        width: 70% !important;
+        left: 15% !important;
+    }
+    input {
+        width: 75% !important;
+    }
+}
+
+.bg{
     background-image: url(./images/zelda-horse.gif);
     background-size: cover;
     background-repeat: no-repeat;
@@ -11,29 +35,36 @@ body{
     background-position: center;
     overflow: hidden;
 }
-
-.video-bg {
-        /*background-image: url(./images/TOTKmainpage.gif);*/
-        background-size: cover;
-        background-repeat: no-repeat;
-        min-height: 100vh;
-        background-position: center;
-}
+/*
 form {
     max-width: 400px;
     margin: 0 auto;
+}*/
+
+h1 {
+    text-align: center;
+    color: white;
+    font-size: 2em;
+    font-family: 'HyliaSerif';
+    letter-spacing: 1px;
+    font-weight: 200;
 }
 h2 {
     text-align: center;
     color: white;
+    font-size: 1.5em;
+    font-family: 'HyliaSerif';
+    letter-spacing: 1px;
+    font-weight: 200;
 }
 
 label {
     color:white;
     display: block;
     text-align: center;
-    font-size: larger;
+    font-size: 1.3em;
     font: bold;
+    font-family: 'HyliaSerif';
 }
 
 span {
@@ -41,7 +72,7 @@ span {
 }
 
 input {
-    width: 75%;
+    width: 50%;
     padding: 6px;
     display: block;
     margin-bottom: 16px; /* Adjust the space between inputs */
@@ -69,9 +100,22 @@ input {
     text-align: center;
 }
 
-button {
+.button1 {
     display: block;
     margin:auto;
+    font-size: 13px;
+    padding: 10px 12px;
+    border-radius: 8px;
+    line-height: 1em;
+    text-decoration: none;
+    background: linear-gradient(to right, #00cc66, #33cc33);
+    text-decoration: none;
+}
+
+
+.signupButtons {
+    display: flex;
+    margin: 8px auto;
     font-size: 13px;
     padding: 10px 12px;
     border-radius: 8px;

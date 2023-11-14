@@ -19,30 +19,32 @@ const Login = () => {
     }
 
   return (
-    <div className='centered-box'>
-    <form className='login-titles' onSubmit={handleSubmit}>
-        <h2>Login</h2>
-        
-        <label>Email:</label>
-            <input 
-                type="email"
-                onChange={(e) => setEmail(e.target.value)} 
-                value={email}
-            />
+    <div className='bg'>
+        <div className='centered-box'>
+        <form className='login-titles' onSubmit={handleSubmit}>
+            <h1>Login</h1>
+            
+            <label>Email:</label>
+                <input 
+                    type="email"
+                    onChange={(e) => setEmail(e.target.value)} 
+                    value={email}
+                />
 
-            <label >Password:</label>
-            <input 
-                type="password"
-                onChange={(e) => setPassword(e.target.value)} 
-                value={password}
-            />
+                <label >Password:</label>
+                <input 
+                    type="password"
+                    onChange={(e) => setPassword(e.target.value)} 
+                    value={password}
+                />
 
-            <button disabled={isLoading}>Log In</button>
-            {error && <div className='error'>{error}</div> }
+                <button className='button1' disabled={isLoading}>Log In</button>
+                {error && <div className='error'>{error}</div> }
 
-            <h2>Don't have an account?</h2>
-            <Link to='/signup'><button>Create Account</button></Link>
-    </form>
+                <h2>Don't have an account?</h2>
+                <Link to='/signup' style={{ textDecoration: 'none' }}><button className='button1'>Create Account</button></Link>
+        </form>
+        </div>
     </div>
   )
 }
