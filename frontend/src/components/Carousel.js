@@ -2,6 +2,10 @@ import React, { useState } from 'react'
 import './Carousel.css'
 import RecipeCard from './RecipeCard'
 import { motion, AnimatePresence } from 'framer-motion'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faAngleRight, faAngleLeft, faAnglesLeft, faAnglesRight } from "@fortawesome/free-solid-svg-icons";
+
+
 
 const Carousel = () => {
     const cardWidth = 300;
@@ -16,6 +20,16 @@ const Carousel = () => {
     
     const handlePrev = () => {
         const prevIndex = (currentIndex - 1);
+        setCurrentIndex(prevIndex);
+    };
+
+    const handleNext5 = () => {
+        const nextIndex = (currentIndex + 5);
+        setCurrentIndex(nextIndex);
+    };
+    
+    const handlePrev5 = () => {
+        const prevIndex = (currentIndex - 5);
         setCurrentIndex(prevIndex);
     };
 
@@ -58,8 +72,10 @@ const Carousel = () => {
             </motion.div>
             </AnimatePresence>
             <div className='nextButton'>
-                <button onClick={handlePrev}>Previous</button>
-                <button onClick={handleNext}>Next</button>
+                <button onClick={handlePrev5}><FontAwesomeIcon icon={faAnglesLeft}  size ="2xl"/></button>
+                <button onClick={handlePrev}><FontAwesomeIcon icon={faAngleLeft}  size ="2xl"/></button>
+                <button onClick={handleNext}><FontAwesomeIcon icon={faAngleRight}  size ="2xl"/></button>
+                <button onClick={handleNext5}><FontAwesomeIcon icon={faAnglesRight}  size ="2xl"/></button>
             </div>
         </div>
 

@@ -1,6 +1,7 @@
 import React from "react"
 import './RecipeCard.css'
 import applePie from "./applePie.png"
+import { motion } from 'framer-motion'
 
 //"recipe" hook can go here, with .image, .title, .id, .hearts, .details, .ingredients
 const RecipeCard = () => {

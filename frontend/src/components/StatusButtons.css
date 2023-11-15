@@ -11,20 +11,21 @@
     border-radius: 100px;
     margin-bottom: 30px;
 }
+
 .buttonBar {
     border-radius: 100px;
     border: 3px solid darkgoldenrod;
-    background-color: white;
+    background-color: tan;
 }
 
 .buttonBar button {
     border: none;
-    padding: 15px;
+    padding: 12px;
     background: none;
     font-family: 'Comic Sans MS';
     font-weight: 700;
 }
 
-.buttonBar button:hover {
-    
+.buttonBar button:active {
+    transform: scale(1.2);
 }

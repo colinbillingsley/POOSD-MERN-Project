@@ -14,6 +14,14 @@
     font-family: 'HyliaSerif';
     letter-spacing: 2px;
     font-weight: 200;
-    margin: 20px;
+    margin: 10px;
     text-shadow: 4px 3px 7px rgba(0, 0, 0, 0.7);
+}
+
+.sort-heading {
+    text-align: center;
+    color: white;
+    margin:10px;
+    text-shadow: 4px 4px 7px rgba(0, 0, 0, 1);
+    font-family: 'Comic Sans MS';
 }

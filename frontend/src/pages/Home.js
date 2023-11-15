@@ -11,6 +11,7 @@ const Home = () => {
     <div className="bg1">
       <Navbar />
       <h2 className='title3'>All Recipes</h2>
+      <h3 className='sort-heading'>Sort by status effect:</h3>
       <StatusButtons />
       <Carousel />
     </div>
