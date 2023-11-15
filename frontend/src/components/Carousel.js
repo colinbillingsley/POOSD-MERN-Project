@@ -66,7 +66,7 @@ const Carousel = () => {
                 className='carousel-container'
                 initial = {{ x:0 }}
                 animate= {{ x: -currentIndex*totalWidth}}
-                transition = {{type: 'spring', stiffness: 70}}
+                transition = {{type: 'spring', stiffness: 55}}
                 drag = 'x'
                 whileDrag={{ cursor: 'grabbing' }}
                 onDragEnd={handleDrag}

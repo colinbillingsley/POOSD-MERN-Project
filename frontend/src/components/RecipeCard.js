@@ -1,13 +1,21 @@
-import React from "react"
+import React, { useState } from "react"
 import './RecipeCard.css'
 import applePie from "./applePie.png"
 import { motion } from 'framer-motion'
 
 //"recipe" hook can go here, with .image, .title, .id, .hearts, .details, .ingredients
 const RecipeCard = ({recipe}) => {
+    const [isHovered, setIsHovered] = useState(false);
+    const [isDragged, setIsDragged] = useState(false);
+  
     return (
       <motion.div
-        whileHover={{scale: 1.11}}
+        whileHover={!isDragged && { scale: 1.1 }} // Apply the scale animation only if not dragged
+        animate={{ scale: (isHovered || isDragged) ? 1.1 : 1 }} // Scale up if hovered or dragged, otherwise, scale to 1
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+        onDragStart={() => setIsDragged(true)}
+        onDragEnd={() => setIsDragged(false)}
         >
         <div className="recipe-card">
           <span className="recipe-id">{recipe.id}</span>
