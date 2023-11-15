@@ -21,7 +21,7 @@ const Signup = () => {
     <div className='bg'>
         <div className='centered-box'>
         <form className='signupForm' onSubmit={handleSubmit}>
-            <h1>Signup</h1>
+            <h1 className='title'>Signup</h1>
             
             <label>Email:</label>
             <input 

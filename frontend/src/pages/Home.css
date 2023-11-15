@@ -1,4 +1,3 @@
-
 .bg1{
     background-image: url(./images/zelda-horse.gif);
     background-size: cover;
@@ -6,5 +5,15 @@
     min-height: 100vh;
     background-position: center;
     overflow: hidden;
+}
 
+.title3 {
+    text-align: center;
+    color: white;
+    font-size: 3em;
+    font-family: 'HyliaSerif';
+    letter-spacing: 2px;
+    font-weight: 200;
+    margin: 20px;
+    text-shadow: 4px 3px 7px rgba(0, 0, 0, 0.7);
 }

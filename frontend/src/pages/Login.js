@@ -22,7 +22,7 @@ const Login = () => {
     <div className='bg'>
         <div className='centered-box'>
         <form className='login-titles' onSubmit={handleSubmit}>
-            <h1>Login</h1>
+            <h1 className='title'>Login</h1>
             
             <label>Email:</label>
                 <input 
@@ -41,7 +41,7 @@ const Login = () => {
                 <button className='fancyButton btnEdit2' disabled={isLoading}>Log In</button>
                 {error && <div className='error'>{error}</div> }
 
-                <h2>Don't have an account?</h2>
+                <h2 className='title2'>Don't have an account?</h2>
                 <Link to='/signup' style={{ textDecoration: 'none' }}><button className='fancyButton'>Create Account</button></Link>
         </form>
         </div>

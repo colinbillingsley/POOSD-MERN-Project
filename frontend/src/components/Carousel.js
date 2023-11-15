@@ -1,13 +1,12 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import './Carousel.css'
 import RecipeCard from './RecipeCard'
-import {motion, AnimatePresence, useAnimation, useMotionValue, useTransform} from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 
 const Carousel = () => {
     const cardWidth = 300;
     const gap = 20;
     const totalWidth = cardWidth + gap;
-    const controls = useAnimation();
     const [currentIndex, setCurrentIndex] = useState(0);
 
     const handleNext = () => {
@@ -20,17 +19,11 @@ const Carousel = () => {
         setCurrentIndex(prevIndex);
     };
 
-    const dragX = useMotionValue(0);
     const handleDrag = (event, info) => {
         const swipe = info.offset.x;
        const moveBy = Math.round(swipe / totalWidth);
        setCurrentIndex(prev => prev - moveBy);
       };
-
-    const scaleCard = (index) => {
-        return index === currentIndex ? 1.1 : 1;
-    }
-      
 
     // Fetch the recipes from the API or define them for recipe prop
     return (

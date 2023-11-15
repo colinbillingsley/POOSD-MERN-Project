@@ -8,7 +8,9 @@ const RecipeCard = () => {
       <div className="recipe-card">
         <span className="recipe-id">131</span>
         <h2 className="recipe-title">Apple Pie</h2>
-        <img src={applePie} alt="Pie" className="recipe-image" />
+        <div className="img-container">
+          <img src={applePie} alt="Pie" className="recipe-image" />
+        </div>
         <div className="recipe-details">
           <p>The cripsy, flaky pie crust and sweet apples are a match made in heaven.</p>
         </div>

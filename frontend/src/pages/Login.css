@@ -44,7 +44,7 @@
 }
 
 
-h1 {
+.title {
     /*Titles*/
     border-bottom: 2px solid white;
     display: inline-block;
@@ -57,7 +57,7 @@ h1 {
     font-weight: 200;
 }
 
-h2 {
+.title2 {
     /*dont have account*/
     text-align: center;
     color: white;
