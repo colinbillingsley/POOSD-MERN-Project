@@ -49,6 +49,7 @@ const Carousel = () => {
                 animate= {{ x: -currentIndex*totalWidth}}
                 transition = {{type: 'spring', stiffness: 50}}
                 drag = 'x'
+                whileDrag={{ cursor: 'grabbing' }}
                 dragConstraints = {{left: 0, right: 0}}
                 onDragEnd={handleDrag}
                 dragElastic={1}

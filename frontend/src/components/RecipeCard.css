@@ -10,7 +10,7 @@
     box-sizing: border-box;
     text-align: center;
     min-width: 300px;
-    cursor:pointer;
+    
 }
 .recipe-card:before {
     content: '';
@@ -42,6 +42,7 @@
 .recipe-details {
     color: #6e612b;
     font-style: italic;
+    margin-top: 5px;
 }
 
 .image-container {
@@ -66,9 +67,9 @@
     object-fit: cover;
 }
 
-.ingredients-title{
+.ingredients-title {
     padding: 0;
+    margin: 0;
     text-align: center;
     color:#6e612b;
 }
-  

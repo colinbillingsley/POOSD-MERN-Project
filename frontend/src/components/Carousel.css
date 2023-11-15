@@ -2,6 +2,7 @@
     display: flex;
     justify-content: center;
     gap: 20px;
+    cursor: grab;
 }
 
 .nextButton {
@@ -16,12 +17,12 @@
     color: white;
     border: none;
     cursor: pointer;
-    scale: 1.1;
+    scale: 1.3;
     transition: transform 0.3s ease-in-out;
 }
 
 .nextButton button:hover {
-    transform: scale(1.7);
+    transform: scale(1.5);
 }
 
 .nextButton button:nth-child(2) {
