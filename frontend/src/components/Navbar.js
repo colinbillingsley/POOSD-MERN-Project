@@ -30,7 +30,6 @@ const Navbar = () => {
         <ul className='nav-list'>
             <li>All Recipes</li>
             <li>Saved Recipes</li>
-            <li>Sort Recipes</li>
             <li><button onClick={() => setFormOpen(true)}>Add Recipe</button></li>
               <RecipeForm isOpen={isFormOpen} onClose={() => setFormOpen(false)} onSubmit={handleAddRecipe} />
             <li><button onClick={handleClick}>Logout</button></li>

@@ -80,7 +80,7 @@ const Carousel = () => {
                 
             </motion.div>
             </AnimatePresence>
-            <div className='nextButton'>
+            <div className='button-container'>
                 <button onClick={handlePrev5}><FontAwesomeIcon icon={faAnglesLeft}  size ="2xl"/></button>
                 <button onClick={handlePrev}><FontAwesomeIcon icon={faAngleLeft}  size ="2xl"/></button>
                 <button onClick={handleNext}><FontAwesomeIcon icon={faAngleRight}  size ="2xl"/></button>

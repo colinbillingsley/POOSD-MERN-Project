@@ -9,6 +9,10 @@ const recipeSchema = new Schema ({
     ingredients: String,
     hearts: Number,
     effect: String,
+    favorited: {
+        type: Boolean,
+        default: false,
+    },
 });
 
 module.exports = mongoose.model('recipe', recipeSchema);

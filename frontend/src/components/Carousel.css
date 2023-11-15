@@ -5,30 +5,31 @@
     cursor: grab;
 }
 
-.nextButton {
+.button-container {
     display: flex;
     justify-content: center;
     margin-top: 30px;
 }
 
-.nextButton button {
-    margin: 0 8px;
-    background:none;
+.button-container button {
+    margin: 0 15px;
+    background: rgba(0, 0, 0, 0.2);;
     color: white;
     border: none;
     cursor: pointer;
-    scale: 1.3;
+    scale: 1.4;
     transition: transform 0.3s ease-in-out;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.8); /* Add box shadow */
 }
 
-.nextButton button:hover {
+.button-container button:hover {
     transform: scale(1.5);
 }
 
-.nextButton button:nth-child(2) {
+.button-container button:nth-child(2) {
     margin-right: 30px; /* Adjust the margin as needed */
   }
   
-  .nextButton button:nth-child(3) {
+  .button-container button:nth-child(3) {
     margin-left: 20px; /* Adjust the margin as needed */
   }
