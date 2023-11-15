@@ -14,6 +14,15 @@ const Home = () => {
       <h3 className='sort-heading'>Sort by status effect:</h3>
       <StatusButtons />
       <Carousel />
+      
+      <details>
+        <popupdiv>
+            <p>
+              Drag to explore your recipes
+          </p>
+        </popupdiv>
+        <summary>How it works</summary>
+      </details>
     </div>
   )
 }
