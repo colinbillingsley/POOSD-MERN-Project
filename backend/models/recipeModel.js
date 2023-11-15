@@ -1,24 +1,14 @@
 const mongoose = require('mongoose')
-
 const Schema = mongoose.Schema
 
 // user collection model
-const userSchema = new Schema ({
-    id: {
-        type: 'Number',
-        required: true,
-        unique: true
-    },
-    name: {
-        type: 'String',
-        required: true
-    },
-    details: {
-        type: 'String',
-        required: true
-    },
-    ingredients: {
-        type: 'String',
-        required: true
-    }
-})
+const recipeSchema = new Schema ({
+    id: Number,
+    name: String,
+    details: String,
+    ingredients: String,
+    hearts: Number,
+    effect: String,
+});
+
+module.exports = mongoose.model('recipe', recipeSchema);

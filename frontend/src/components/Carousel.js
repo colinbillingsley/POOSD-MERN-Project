@@ -1,17 +1,17 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './Carousel.css'
 import RecipeCard from './RecipeCard'
 import { motion, AnimatePresence } from 'framer-motion'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleRight, faAngleLeft, faAnglesLeft, faAnglesRight } from "@fortawesome/free-solid-svg-icons";
-
-
+import axios from 'axios'
 
 const Carousel = () => {
     const cardWidth = 300;
     const gap = 20;
     const totalWidth = cardWidth + gap;
     const [currentIndex, setCurrentIndex] = useState(0);
+    const [recipes, setRecipes] = useState([]);
 
     const handleNext = () => {
         const nextIndex = (currentIndex + 1);
@@ -39,6 +39,17 @@ const Carousel = () => {
        setCurrentIndex(prev => prev - moveBy);
       };
 
+    useEffect(() => {
+    // Fetch recipe data from API
+    axios.get('/api/recipes')
+        .then((response) => {
+        setRecipes(response.data);
+        })
+        .catch((error) => {
+        console.error('Error fetching recipes:', error);
+        });
+    }, []);
+
     // Fetch the recipes from the API or define them for recipe prop
     return (
         <div >
@@ -56,19 +67,9 @@ const Carousel = () => {
                 dragMomentum={false}
             >
                 
-                <RecipeCard />
-                <RecipeCard />
-                <RecipeCard />
-                <RecipeCard />
-                <RecipeCard />
-                <RecipeCard />
-                <RecipeCard />
-                <RecipeCard />
-                <RecipeCard />
-                <RecipeCard />
-                <RecipeCard />
-                <RecipeCard />
-                <RecipeCard />
+            {recipes.map((recipe) => (
+                <RecipeCard key={recipe._id} recipe={recipe} />
+            ))}
                 
             </motion.div>
             </AnimatePresence>
