@@ -20,6 +20,7 @@ const RecipeCard = ({recipe}) => {
           </div>
           <div className="">
             <h3 className="ingredients-title">Ingredients</h3>
+            <p className="ingredients">{recipe.ingredients}</p>
           </div>
         </div>
       </motion.div>
