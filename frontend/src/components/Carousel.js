@@ -49,7 +49,7 @@ const Carousel = () => {
 
     useEffect(() => {
     // Fetch recipe data from API
-    axios.get('/api/recipes')
+    axios.get('http://localhost:4000/api/recipes')
         .then((response) => {
         setRecipes(response.data);
         })
@@ -77,7 +77,6 @@ const Carousel = () => {
             {recipes.map((recipe) => (
                 <RecipeCard key={recipe._id} recipe={recipe} />
             ))}
-                
             </motion.div>
             </AnimatePresence>
             <div className='button-container'>

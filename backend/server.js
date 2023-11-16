@@ -1,16 +1,23 @@
 const express = require('express')
 const mongoose = require('mongoose')
+const cors = require('cors')
 require('dotenv').config()
 
 const userRoutes = require('./routes/userRoutes')
 const recipeRoutes = require('./routes/recipeRoutes')
+
+  const corsOptions = {
+   origin: 'https://tearsofthanksgiving.com',
+   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+   optionsSuccessStatus: 200
+ }
 
 // express app
 const app = express()
 
 // middleware
 app.use(express.json())
-
+app.use(cors(corsOptions));
 app.use((req, res, next) => {
   console.log(req.path, req.method)
   next()

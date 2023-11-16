@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { useAuthContext } from "./useAuthContext";
+const requestTimeout = 15000
+
 
 export const useLogin = () => {
     const [error, setError] = useState(null)
@@ -10,11 +12,18 @@ export const useLogin = () => {
         setIsLoading(true)
         setError(null)
 
+        const abortController = new AbortController()
+        const timeoutId = setTimeout(() => {
+            abortController.abort();
+            console.error('Request timed out')
+        }, requestTimeout)
+
         // fetch the api of the login
-        const response = await fetch('/api/user/login', {
+        const response = await fetch('http://localhost:4000/api/user/login', {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify({email, password})
+            body: JSON.stringify({email, password}),
+            signal: abortController.signal
         })
 
         const json = await response.json()
@@ -32,6 +41,8 @@ export const useLogin = () => {
 
             setIsLoading(false)
         }
+
+        clearTimeout(timeoutId);
     }
 
     return {login, isLoading, error}
