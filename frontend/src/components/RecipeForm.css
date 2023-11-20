@@ -1,102 +1,123 @@
-  /* Add this CSS in your stylesheets or use a styling solution like styled-components */
-  
-  .recipe-modal {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background: #0558d4;
-    padding: 20px;
-    border-radius: 8px;
-  }
-  
-  .recipe-form {
-    display: flex;
-    flex-direction: column;
-    width: 300px;
-  }
-  
-  .recipe-input {
-    width: 100%;
-    margin-bottom: 10px;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    resize: none;
-  }
-  
-  .recipe-select-label {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 10px;
-  }
-  
-  .custom-dropdown {
-    position: relative;
-    display: inline-block;
-  }
-  
-  .custom-option {
-    display: flex;
-    align-items: center;
-    padding: 8px;
-    cursor: pointer;
-  }
-  
-  .custom-option.selected {
-    border: 2px solid #4caf50; /* Change the color and size as needed */
-  }
-  
-  .custom-option:hover {
-    background-color: #f0f0f0;
-  }
-  
-  .custom-option-image {
-    margin-right: 8px;
-    max-width: 30px;
-    max-height: 30px;
-  }
-  
-  .selected-icon {
-    max-width: 50px;
-    max-height: 50px;
-    margin-top: 10px;
-  }
-  
-  .submit-button {
-    background-color: #4caf50;
-    color: white;
-    padding: 10px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
-  }
-  
-  .submit-button:hover {
-    background-color: #45a049;
-  }
-  
-  .icon-list {
-    max-height: 150px; /* Adjust the height as needed */
-    overflow-y: auto;
-    border: 1px solid #ccc; /* Add a border for visual separation */
-  }
-  
-  .icon-list-item {
-    margin-bottom: 5px; /* Add some spacing between items */
-  }
-  
-  .icon-label {
-    display: block;
-    text-align: center;
-    margin-top: 5px; /* Adjust spacing as needed */
-  }
-  
-  .search-bar {
-    width: 100%;
-    margin-bottom: 10px;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
+/* Add this CSS in your stylesheets or use a styling solution like styled-components */
+@font-face {
+  font-family: 'HyliaSerif';
+  src: url('../fonts/HyliaSerif.otf');
+}
+
+.recipe-modal {
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #2c2929;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 80%;
+  max-height: 80%;
+  position: fixed;
+  top: 10%;
+  left: 20%;
+  right: 20%;
+  bottom: 10%;
+}
+
+.recipe-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 400px; /* Adjust the width as needed */
+  position: relative;
+  right: 7%;
+}
+
+.recipe-select-label {
+  margin-bottom: 10px;
+}
+
+.custom-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.custom-option {
+  display: flex;
+  align-items: center;
+  padding: 8px;
+  cursor: pointer;
+}
+
+.custom-option.selected {
+  border: 2px solid #4caf50;
+}
+
+.custom-option:hover {
+  background-color: #504a4a;
+}
+
+.custom-option-image {
+  margin-right: 8px;
+  max-width: 30px;
+  max-height: 30px;
+}
+
+.selected-icon {
+  max-width: 50px;
+  max-height: 50px;
+  margin-top: 10px;
+}
+
+.submit-button {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+.submit-button:hover {
+  background-color: #45a049;
+}
+
+.icon-list {
+  max-height: 150px;
+  overflow-y: auto;
+  border: 1px solid #ccc;
+}
+
+.icon-list-item {
+  margin-bottom: 5px;
+}
+
+.icon-label {
+  text-align: center;
+  margin-top: 5px;
+}
+
+.search-bar {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.recipe-card-preview {
+  display: flex;
+}
+
+.Add-Recipe {
+  font-family: 'HyliaSerif';
+  font-size: 30px;
+  position: relative;
+  bottom: 48%;
+  left: 18%;
+}
+
+.error-message {
+  color: red;
+  position: relative;
+  left: 30%;
+}

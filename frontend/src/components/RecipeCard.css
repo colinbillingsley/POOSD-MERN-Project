@@ -10,6 +10,7 @@
     box-sizing: border-box;
     text-align: center;
     min-width: 300px;
+    overflow: hidden;
     
 }
 .recipe-card:before {
@@ -44,6 +45,9 @@
     font-style: italic;
     margin-top: 5px;
     text-align:left;
+    overflow: hidden; /* Hide overflow content */
+    text-overflow: ellipsis; /* Display an ellipsis (...) when text overflows */
+    white-space: nowrap; /* Prevent text from wrapping */
 }
 
 .image-container {
@@ -78,4 +82,5 @@
 .ingredients {
     color:#6e612b;
     font-weight:500;
+    white-space: wrap;
 }

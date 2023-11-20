@@ -9,6 +9,7 @@ const recipeSchema = new Schema ({
     ingredients: String,
     hearts: Number,
     effect: String,
+    selectedIcon: String,
     favorited: {
         type: Boolean,
         default: false,

@@ -14,4 +14,22 @@ router.get('/', async (req, res) => {
   }
 });
 
+router.route("/").post((req, res) => {
+    const name = req.body.name;
+    const ingredients = req.body.ingredients;
+    const details = req.body.details;
+    const selectedIcon = req.body.selectedIcon;
+
+    const newRecipe = new Recipe({
+        name,
+        details,
+        ingredients,
+        details,
+        selectedIcon
+    });
+
+    newRecipe.save();
+  })
+
+
 module.exports = router;

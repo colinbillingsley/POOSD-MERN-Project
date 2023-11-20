@@ -7,7 +7,7 @@ const userRoutes = require('./routes/userRoutes')
 const recipeRoutes = require('./routes/recipeRoutes')
 
   const corsOptions = {
-   origin: 'https://tearsofthanksgiving.com',
+   origin: 'http://localhost:3000',
    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
    optionsSuccessStatus: 200
  }

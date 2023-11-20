@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import './RecipeCard.css'
-import applePie from "./applePie.png"
 import { motion } from 'framer-motion'
+import defaultImage from './Images/Portable_Pot_-_TotK_icon.png'
 
 //"recipe" hook can go here, with .image, .title, .id, .hearts, .details, .ingredients
 const RecipeCard = ({recipe}) => {
@@ -21,7 +21,7 @@ const RecipeCard = ({recipe}) => {
           <span className="recipe-id">{recipe.id}</span>
           <h2 className="recipe-title">{recipe.name}</h2>
           <div className="img-container">
-            <img src={applePie} alt="Pie" className="recipe-image" />
+          <img src={recipe.selectedIcon || defaultImage} alt="Pie" className="recipe-image" />
           </div>
           <div>
             <p className="recipe-details">{recipe.details}</p>
