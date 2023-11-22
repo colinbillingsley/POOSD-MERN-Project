@@ -7,11 +7,11 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
-
 .error {
-  color: red
+  font-family: 'HyliaSerif';
+  color: red;
+  padding: 1em;
+  background-color: rgba(255, 0, 0, 0.205);
+  border-radius: 1em;
+  margin-top: 1em;
 }

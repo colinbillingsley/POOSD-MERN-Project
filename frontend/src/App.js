@@ -8,9 +8,11 @@ import Home from './pages/Home'
 import Login from './pages/Login'
 import Signup from './pages/Signup'
 import { useAuthContext } from './hooks/useAuthContext'
+import Verify from './pages/Verify'
 
 function App() {
   const { user } = useAuthContext()
+
   
   return (
     <div className="App">
@@ -27,11 +29,15 @@ function App() {
             />
             <Route 
               path="/login"
-              element={!user ? <Login /> : <Navigate to='/home' />}
+              element={!user || !(user.user.emailVerified) ? <Login /> : <Navigate to='/home' />}
             />
             <Route
               path="/signup"
-              element={!user ? <Signup /> : <Navigate to='/login' />}
+              element={!user || !(user.user.emailVerified) ? <Signup /> : <Navigate to='/login' />}
+            />
+            <Route
+              path="/verify"
+              element={<Verify />}
             />
           </Routes>
         </div>

@@ -14,6 +14,15 @@ const userSchema = new Schema ({
     password: {
         type: 'String',
         required: true
+    },
+    tempToken: {
+        type: 'String',
+        required: true,
+    },
+    emailVerified: {
+        type: 'Boolean',
+        required: true,
+        default: false
     }
 })
 
@@ -31,6 +40,12 @@ userSchema.statics.login = async function(email, password) {
         throw Error('Email not found')
     }
 
+    // check if user has been verified
+    const verified = user.emailVerified
+    if (!verified) {
+        throw Error('Email has not been verified.')
+    }
+
     // check if password matches with email
     const match = await bcrypt.compare(password, user.password)
     if (!match) {
@@ -41,7 +56,7 @@ userSchema.statics.login = async function(email, password) {
 }
 
 // static signup method
-userSchema.statics.signup = async function(email, password) {
+userSchema.statics.signup = async function(email, password, tempToken) {
 
     // validation
     if (!email || !password) {
@@ -65,7 +80,7 @@ userSchema.statics.signup = async function(email, password) {
     const hash = await bcrypt.hash(password, salt)
 
     // send user info to database
-    const user = await this.create({email, password: hash})
+    const user = await this.create({email, password: hash, tempToken})
 
     return user
 }
