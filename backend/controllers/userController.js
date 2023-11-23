@@ -91,5 +91,5 @@ const verifyUser = async (req, res) => {
 module.exports = {
     loginUser,
     signupUser,
-    verifyUser
+    verifyUser,
 }

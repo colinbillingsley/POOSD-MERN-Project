@@ -33,3 +33,15 @@
   .button-container button:nth-child(3) {
     margin-left: 20px; /* Adjust the margin as needed */
   }
+
+  .no-recipes {
+    font-size: 3em;
+    color: rgb(98, 78, 51);
+    text-align: center;
+    font-family: 'HyliaSerif';
+    background-color: tan;
+    border: 3px solid darkgoldenrod;
+    padding: 1em;
+    border-radius: 1em;
+    margin: 1em;
+  }

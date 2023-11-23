@@ -4,12 +4,10 @@ import RecipeCard from './RecipeCard'
 import { motion, AnimatePresence } from 'framer-motion'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleRight, faAngleLeft, faAnglesLeft, faAnglesRight } from "@fortawesome/free-solid-svg-icons";
-import axios from 'axios'
 
-const Carousel = () => {
+const Carousel = ({recipes}) => {
     const totalWidth = 320;
-    const [currentIndex, setCurrentIndex] = useState(-22);
-    const [recipes, setRecipes] = useState([]);
+    const [currentIndex, setCurrentIndex] = useState(0);
     const totalItems = recipes.length;
     const minIndex = -(totalItems/2);
     const maxIndex = totalItems/2;
@@ -46,18 +44,6 @@ const Carousel = () => {
         }
       };
 
-
-    useEffect(() => {
-    // Fetch recipe data from API
-    axios.get('http://localhost:4000/api/recipes')
-        .then((response) => {
-        setRecipes(response.data);
-        })
-        .catch((error) => {
-        console.error('Error fetching recipes:', error);
-        });
-    }, []);
-
     // Fetch the recipes from the API or define them for recipe prop
     return (
         <div >
@@ -86,8 +72,6 @@ const Carousel = () => {
                 <button onClick={handleNext5}><FontAwesomeIcon icon={faAnglesRight}  size ="2xl"/></button>
             </div>
         </div>
-
-
     )
 }
 

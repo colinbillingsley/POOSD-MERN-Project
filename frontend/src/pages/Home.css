@@ -116,4 +116,16 @@ summary { /* the how it works box itself */
 	}
 }
 
+.no-recipes-title {
+	font-size: 2em;
+	font-family: 'HyliaSerif';
+	color: rgb(97, 71, 37);
+	background-color: tan;
+	border: 3px solid darkgoldenrod;
+	border-radius: 1em;
+	text-align: center;
+	padding: 1em;
+	margin: 1em;
+}
+
 

@@ -20,10 +20,6 @@ function App() {
         <div className="pages">
           <Routes>
           <Route 
-              path="/"
-              element={user ? <Home /> : <Navigate to='/login' />}
-            />
-            <Route 
               path="/home"
               element={user ? <Home /> : <Navigate to='/login' />}
             />

@@ -1,4 +1,5 @@
 // RecipeForm.js
+import { useAuthContext } from '../hooks/useAuthContext'
 import React, { useState } from 'react';
 import Modal from 'react-modal';
 import axios from "axios";
@@ -29,6 +30,8 @@ const RecipeForm = ({ isOpen, onClose, onSubmit }) => {
   const [searchQuery, setSearchQuery] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
   const [showPreview, setShowPreview] = useState(true); 
+  const { user } = useAuthContext();
+  const user_id = user.user._id
 
   const iconLabelMap = {
     [bread]: 'Bread',
@@ -49,7 +52,8 @@ const RecipeForm = ({ isOpen, onClose, onSubmit }) => {
     // Add more options as needed
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault()
     if (!name || !ingredients || !details || !selectedIcon) {
       // Handle the case where a required field is empty (you can show an error message or prevent form submission)
       setErrorMessage('All fields are required');
@@ -65,13 +69,15 @@ const RecipeForm = ({ isOpen, onClose, onSubmit }) => {
       ingredients,
       details,
       selectedIcon,
+      user_id
     };
 
     const newRecipe = {
       name: name,
       ingredients: ingredients,
       details: details,
-      selectedIcon: selectedIcon
+      selectedIcon: selectedIcon,
+      user_id: user_id
     }
 
     // Handle successful submission, if needed

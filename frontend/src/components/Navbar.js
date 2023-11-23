@@ -1,12 +1,10 @@
 import React, { useState } from 'react'
-import { useAuthContext } from '../hooks/useAuthContext'
 import { useLogout } from '../hooks/useLogout'
+import { Link } from 'react-router-dom'
 import './Navbar.css'
 import RecipeForm from './RecipeForm'
 
 const Navbar = () => {
-  // holds our user information
-  const { user } = useAuthContext()
   // brings our logout function from useLogout
   const { logout } = useLogout()
 
@@ -28,8 +26,8 @@ const Navbar = () => {
         <span>{`Hello ${user.email}`}</span>*/
       <nav className='navbar'>
         <ul className='nav-list'>
-            <li>All Recipes</li>
-            <li>Saved Recipes</li>
+            <li><Link to ='/home'>All Recipes</Link></li>
+            <li><Link to='/favorited-recipes'>Favorited Recipes</Link></li>
             <li><button onClick={() => setFormOpen(true)}>Add Recipe</button></li>
               <RecipeForm isOpen={isFormOpen} onClose={() => setFormOpen(false)} onSubmit={handleAddRecipe} />
             <li><button onClick={handleClick}>Logout</button></li>
