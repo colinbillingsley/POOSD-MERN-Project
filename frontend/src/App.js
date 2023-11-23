@@ -7,6 +7,7 @@ import React from 'react'
 import Home from './pages/Home'
 import Login from './pages/Login'
 import Signup from './pages/Signup'
+import Favorites from './pages/Favorites'
 import { useAuthContext } from './hooks/useAuthContext'
 import Verify from './pages/Verify'
 
@@ -19,9 +20,13 @@ function App() {
       <BrowserRouter>
         <div className="pages">
           <Routes>
-          <Route 
-              path="/home"
-              element={user ? <Home /> : <Navigate to='/login' />}
+            <Route 
+                path="/home"
+                element={user ? <Home /> : <Navigate to='/login' />}
+              />
+            <Route 
+              path="/favorites"
+              element={user ? <Favorites /> : <Navigate to='/login' />}
             />
             <Route 
               path="/login"

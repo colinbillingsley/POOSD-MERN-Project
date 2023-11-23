@@ -27,7 +27,7 @@ const Navbar = () => {
       <nav className='navbar'>
         <ul className='nav-list'>
             <li><Link to ='/home'>All Recipes</Link></li>
-            <li><Link to='/favorited-recipes'>Favorited Recipes</Link></li>
+            <li><Link to='/favorites'>Favorite Recipes</Link></li>
             <li><button onClick={() => setFormOpen(true)}>Add Recipe</button></li>
               <RecipeForm isOpen={isFormOpen} onClose={() => setFormOpen(false)} onSubmit={handleAddRecipe} />
             <li><button onClick={handleClick}>Logout</button></li>

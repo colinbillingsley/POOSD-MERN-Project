@@ -8,13 +8,13 @@ import { useAuthContext } from '../hooks/useAuthContext'
 import axios from 'axios'
 
 // home page we transition to after login
-const Home = () => {
+const Favorites = () => {
   const [recipes, setRecipes] = useState([]);
   const { user } = useAuthContext();
 
   useEffect(() => {
     // Fetch recipe data from API for user
-    axios.get('http://127.0.0.1:4000/api/recipes/' + user.user._id)
+    axios.get('http://127.0.0.1:4000/api/recipes/favorites/' + user.user._id)
         .then((response) => {
         setRecipes(response.data);
         })
@@ -28,7 +28,7 @@ const Home = () => {
     return (
       <div className="bg1">
         <Navbar />
-        <h2 className='title3'>All Recipes</h2>
+        <h2 className='title3'>Favorite Recipes</h2>
         <h3 className='sort-heading'>Sort by status effect:</h3>
         <StatusButtons />
         <Carousel recipes={recipes}/>
@@ -44,15 +44,15 @@ const Home = () => {
       </div>
     )
   } 
-  // if the user has not added recipes, display no recipes added
+  // if the user has not Favorited recipes, display no recipes added
   else {
     return (
       <div className="bg1">
         <Navbar />
-        <h2 className='title3'>All Recipes</h2>
+        <h2 className='title3'>Favorite Recipes</h2>
         <h3 className='sort-heading'>Sort by status effect:</h3>
-        <h2 className='no-recipes-title'>No Recipes Created!</h2>
-        
+        <h2 className='no-recipes-title'>No Favorited Recipes!</h2>
+                
         <details>
           <popupdiv>
               <p>
@@ -66,4 +66,4 @@ const Home = () => {
   }
 }
 
-export default Home
+export default Favorites

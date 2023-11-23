@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import './Carousel.css'
 import RecipeCard from './RecipeCard'
 import { motion, AnimatePresence } from 'framer-motion'

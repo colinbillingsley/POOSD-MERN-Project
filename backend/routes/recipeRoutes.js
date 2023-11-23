@@ -34,4 +34,20 @@ router.route("/").post((req, res) => {
     newRecipe.save();
   })
 
+  router.get('/favorites/:id', async (req, res) => {
+    const { id } = req.params
+
+    try {
+      const recipes = await Recipe.find({user_id: id, favorited: true})
+      if (recipes.length === 0) {
+        res.json({mssg:'no recipes favorited'})
+      } else {
+        res.status(200).json(recipes)
+      }
+    } catch (error) {
+      console.error('Error fetching recipes:', error);
+      res.status(500).json({ error: 'Internal Server Error' });
+    }
+  })
+
 module.exports = router;
