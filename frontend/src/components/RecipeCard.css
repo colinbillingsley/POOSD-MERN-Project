@@ -84,3 +84,39 @@
     font-weight:500;
     white-space: wrap;
 }
+
+.card-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+    padding: 1em;
+}
+
+.card-icon {
+    margin: 0 15px;
+    padding: 1em;
+    background: rgba(0, 0, 0, 0.2);;
+    color: white;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.8); /* Add box shadow */
+    border-radius: 50%;
+}
+
+.fa-star-icon,
+.fa-trash-icon {
+    transition: all 0.3s ease-in-out;
+}
+
+.card-icon:hover {
+    cursor: pointer;
+}
+
+.card-icon:hover .fa-trash-icon {
+    color: red;
+}
+
+.card-icon:hover .fa-star-icon {
+    color: gold;
+}

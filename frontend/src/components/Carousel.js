@@ -61,7 +61,7 @@ const Carousel = ({recipes}) => {
             >
                 
             {recipes.map((recipe) => (
-                <RecipeCard key={recipe._id} recipe={recipe} />
+                <RecipeCard key={recipe._id} recipe={recipe} favorite={recipe.favorited} />
             ))}
             </motion.div>
             </AnimatePresence>
