@@ -123,8 +123,12 @@ summary { /* the how it works box itself */
 
 .no-recipes-title {
 	font-size: 2em;
+	letter-spacing: 2px;
+	padding-top: 20px;
+	margin: auto !important;
 	font-family: 'HyliaSerif';
 	color: rgb(97, 71, 37);
+	max-width: 40%;
 	background-color: tan;
 	border: 3px solid darkgoldenrod;
 	border-radius: 1em;
