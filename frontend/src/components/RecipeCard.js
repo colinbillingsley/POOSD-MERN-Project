@@ -57,17 +57,22 @@ const RecipeCard = ({recipe, favorite, deletion, setDeletion, deleteCard, setDel
           <img src={recipe.selectedIcon || defaultImage} alt="Pie" className="recipe-image" />
           </div>
           <div>
-            <h3 className="ingredients-title">{recipe.selectedStatusEffect}</h3>
-          </div>
-          <div>
             <p className="recipe-details">{recipe.details}</p>
           </div>
           <div className="">
           <h3 className="ingredients-title">Ingredients</h3>
             <p className="ingredients">{recipe.ingredients}</p>
           </div>
+          <div>
+            <h3 className="status-type">{recipe.selectedStatusEffect}</h3>
+          </div>
           <div className="hearts-count">
-            <p><IoMdHeart className="hearts-icon" />   {recipe.numberofHearts}   <IoMdHeart className="hearts-icon" /></p>
+            <p>
+                {recipe.numberofHearts} <br/>
+                {[...Array(recipe.numberofHearts)].map((_, index) => (
+                  <IoMdHeart key={index} className="hearts-icon" />
+                ))}
+            </p>
           </div>
         </div>
         <div className="card-icons">

@@ -29,4 +29,5 @@
 .selected {
     scale: 1.3;
     text-decoration: underline;
+    text-underline-offset: 3px;
 }
