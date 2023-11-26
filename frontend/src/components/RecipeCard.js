@@ -8,6 +8,18 @@ import { useAuthContext } from '../hooks/useAuthContext'
 import { IoMdHeart } from 'react-icons/io';
 import axios from 'axios'
 
+function getStatusColor(selectedStatusEffect) {
+  switch (selectedStatusEffect) {
+      case "Hearty":
+        return "red";
+      case "Chilly":
+        return "#0d00ff";
+      case "Hasty":
+        return "blue";
+      case "Sneaky":
+        return "purple";
+  }
+}
 //"recipe" hook can go here, with .image, .title, .id, .hearts, .details, .ingredients
 const RecipeCard = ({recipe, favorite, deletion, setDeletion, deleteCard, setDeleteCard}) => {
     const [isHovered, setIsHovered] = useState(false);
@@ -64,7 +76,7 @@ const RecipeCard = ({recipe, favorite, deletion, setDeletion, deleteCard, setDel
             <p className="ingredients">{recipe.ingredients}</p>
           </div>
           <div>
-            <h3 className="status-type">{recipe.selectedStatusEffect}</h3>
+            <h3 className="status-type" style ={{ color: getStatusColor(recipe.selectedStatusEffect) }}>{recipe.selectedStatusEffect}</h3>
           </div>
           <div className="hearts-count">
             <p>
