@@ -9,7 +9,7 @@ import { IoMdHeart } from 'react-icons/io';
 import axios from 'axios'
 
 //"recipe" hook can go here, with .image, .title, .id, .hearts, .details, .ingredients
-const RecipeCard = ({recipe, favorite}) => {
+const RecipeCard = ({recipe, favorite, deletion, setDeletion, deleteCard, setDeleteCard}) => {
     const [isHovered, setIsHovered] = useState(false);
     const [isDragged, setIsDragged] = useState(false);
     const [isFavorite, setIsFavorite] = useState(favorite);
@@ -18,6 +18,11 @@ const RecipeCard = ({recipe, favorite}) => {
     // delete recipe
     const handleDelete = async () => {
       axios.delete('http://127.0.0.1:4000/api/recipes/' + user.user._id + '/' + recipe._id)
+      .then(() => {
+        // set deletion to true and grab the id of recipe
+        setDeletion(true);
+        setDeleteCard(recipe._id)
+      })
       .catch((error) => {
         console.error('Error fetching recipe:', error);
       });

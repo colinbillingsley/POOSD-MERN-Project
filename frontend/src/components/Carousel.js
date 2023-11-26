@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleRight, faAngleLeft, faAnglesLeft, faAnglesRight } from "@fortawesome/free-solid-svg-icons";
 
-const Carousel = ({recipes}) => {
+const Carousel = ({recipes, deletion, setDeletion, deleteCard, setDeleteCard}) => {
     const totalWidth = 320;
     const [currentIndex, setCurrentIndex] = useState(0);
     const totalItems = recipes.length;
@@ -61,7 +61,7 @@ const Carousel = ({recipes}) => {
             >
                 
             {recipes.map((recipe) => (
-                <RecipeCard key={recipe._id} recipe={recipe} favorite={recipe.favorited} />
+                <RecipeCard key={recipe._id} recipe={recipe} favorite={recipe.favorited} deletion={deletion} setDeletion={setDeletion} deleteCard={deleteCard} setDeleteCard={setDeleteCard} />
             ))}
             </motion.div>
             </AnimatePresence>
