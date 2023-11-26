@@ -119,3 +119,7 @@
     outline-color: rgba(255, 255, 255, 0);
     outline-offset: 15px;
 }
+
+.hearts-icon {
+    color: red;
+}

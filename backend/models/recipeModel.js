@@ -1,14 +1,17 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
-// user collection model
+// recipe collection model
 const recipeSchema = new Schema ({
     id: Number,
     name: String,
     details: String,
     ingredients: String,
-    hearts: Number,
-    effect: String,
+    selectedStatusEffect: {
+        type: String,
+        minimize: false,
+    },
+    numberofHearts: Number,
     selectedIcon: String,
     favorited: {
         type: Boolean,
@@ -16,7 +19,7 @@ const recipeSchema = new Schema ({
     },
     user_id: {
         type: String,
-        required: false
+        required: false,
     }
 });
 

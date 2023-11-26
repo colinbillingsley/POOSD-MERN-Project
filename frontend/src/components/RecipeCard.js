@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from "react"
+import React, { useState } from "react"
 import './RecipeCard.css'
 import { motion } from 'framer-motion'
 import defaultImage from './Images/Portable_Pot_-_TotK_icon.png'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar, faTrash } from "@fortawesome/free-solid-svg-icons";
 import { useAuthContext } from '../hooks/useAuthContext'
+import { IoMdHeart } from 'react-icons/io';
 import axios from 'axios'
 
 //"recipe" hook can go here, with .image, .title, .id, .hearts, .details, .ingredients
@@ -51,11 +52,17 @@ const RecipeCard = ({recipe, favorite}) => {
           <img src={recipe.selectedIcon || defaultImage} alt="Pie" className="recipe-image" />
           </div>
           <div>
+            <h3 className="ingredients-title">{recipe.selectedStatusEffect}</h3>
+          </div>
+          <div>
             <p className="recipe-details">{recipe.details}</p>
           </div>
           <div className="">
-            <h3 className="ingredients-title">Ingredients</h3>
+          <h3 className="ingredients-title">Ingredients</h3>
             <p className="ingredients">{recipe.ingredients}</p>
+          </div>
+          <div className="hearts-count">
+            <p><IoMdHeart className="hearts-icon" />   {recipe.numberofHearts}   <IoMdHeart className="hearts-icon" /></p>
           </div>
         </div>
         <div className="card-icons">

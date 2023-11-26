@@ -121,3 +121,22 @@
   position: relative;
   left: 30%;
 }
+
+.hearts-slider-container {
+  display: flex;
+  align-items: center;
+}
+
+.heart-icon {
+  cursor: pointer;
+  margin: 0 2px;
+  transition: color 0.3s;
+}
+
+.heart-icon:hover {
+  color: lightcoral;
+}
+
+.heart-icon.selected {
+  color: red;
+}

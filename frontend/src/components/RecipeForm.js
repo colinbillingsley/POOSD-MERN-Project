@@ -1,9 +1,12 @@
 // RecipeForm.js
 import { useAuthContext } from '../hooks/useAuthContext'
+import { IoMdHeart } from 'react-icons/io';
 import React, { useState } from 'react';
 import Modal from 'react-modal';
 import axios from "axios";
 import './RecipeForm.css';
+import './StatusButtons.css'
+import { motion } from 'framer-motion'
 
 //Image Imports
 import bread from './Images/120px-Wheat_Bread_-_TotK_icon.png';
@@ -29,9 +32,14 @@ const RecipeForm = ({ isOpen, onClose, onSubmit }) => {
   const [selectedIcon, setSelectedIcon] = useState('');
   const [searchQuery, setSearchQuery] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
-  const [showPreview, setShowPreview] = useState(true); 
+  const [selectedStatusEffect, setSelectedStatusEffect] = useState('');
+  const [numberofHearts, setNumberofHearts] = useState(0);
   const { user } = useAuthContext();
   const user_id = user.user._id
+
+   const handleButtonClick = (selectedStatusEffect) => {
+        setSelectedStatusEffect(selectedStatusEffect);
+    };
 
   const iconLabelMap = {
     [bread]: 'Bread',
@@ -69,6 +77,8 @@ const RecipeForm = ({ isOpen, onClose, onSubmit }) => {
       ingredients,
       details,
       selectedIcon,
+      selectedStatusEffect,
+      numberofHearts,
       user_id
     };
 
@@ -77,30 +87,31 @@ const RecipeForm = ({ isOpen, onClose, onSubmit }) => {
       ingredients: ingredients,
       details: details,
       selectedIcon: selectedIcon,
+      selectedStatusEffect: selectedStatusEffect,
+      numberofHearts: numberofHearts,
       user_id: user_id
     }
 
     // Handle successful submission, if needed
     onSubmit(formData);
-
-    setShowPreview(!showPreview);
+    console.log('Form submitted successfully:', formData);
 
     // Clear the form fields
     setname('');
     setIngredients('');
     setDetails('');
     setSelectedIcon('');
+    setSelectedStatusEffect('');
     setSearchQuery('');
-    setShowPreview(true);
     
     // Close the modal
     onClose();
     // Refresh the page
-    window.location.reload();
+    //window.location.reload();
 
-    axios.post('http://localhost:3000/api/recipes', newRecipe)
+    axios.post('http://127.0.0.1:4000/api/recipes/', newRecipe)
       .then(response => {
-        console.log('Form submitted successfully:', response);
+        console.log('Form submitted successfully:', newRecipe);
       })
       .catch(error => {
         // Handle submission error, if needed
@@ -115,8 +126,7 @@ const RecipeForm = ({ isOpen, onClose, onSubmit }) => {
       key={image}
       className={`custom-option ${selectedIcon === image ? 'selected' : ''}`}
       onClick={() => {
-        setSelectedIcon(image)
-        setShowPreview(true);
+        setSelectedIcon(image);
       }}
     >
       <img src={image} alt={iconLabelMap[image]} className="custom-option-image" />
@@ -145,7 +155,6 @@ const RecipeForm = ({ isOpen, onClose, onSubmit }) => {
 
   return (
     <Modal isOpen={isOpen} onRequestClose={onClose} ariaHideApp={false} className="recipe-modal">
-      <h2 className='Add-Recipe'>Add Recipe</h2>
       <div className="recipe-form">
       <label>
           Recipe Name:
@@ -175,6 +184,44 @@ const RecipeForm = ({ isOpen, onClose, onSubmit }) => {
             required={true}
           />
         </label>
+        <label>
+          <div className="container">
+              <div className="buttonBar">
+                  <motion.button
+                      whileHover = {{scale:1.3, y: -5}}
+                      transition={{ type: 'spring', stiffness: 300, damping: 20 }} // Adjust spring animation parameters
+                      onClick={() => handleButtonClick("Hearty")}
+                  >
+                      Hearty
+                  </motion.button>
+
+                  <motion.button
+                      whileHover = {{scale:1.3, y: -5}}
+                      transition={{ type: 'spring', stiffness: 300, damping: 20 }} // Adjust spring animation parameters
+                      onClick={() => handleButtonClick("Chilly")}
+                  >
+                      Chilly
+                  </motion.button>
+
+                  <motion.button
+                      whileHover = {{scale:1.3, y: -5}}
+                      transition={{ type: 'spring', stiffness: 300, damping: 20 }} // Adjust spring animation parameters
+                      onClick={() => handleButtonClick("Hasty")}
+                  >
+                      Hasty
+                  </motion.button>
+                  <motion.button
+
+                      whileHover = {{scale:1.3, y: -5}}
+                      transition={{ type: 'spring', stiffness: 300, damping: 20 }} // Adjust spring animation parameters
+                      onClick={() => handleButtonClick("Sneaky")}
+                  >
+                      Sneaky
+                  </motion.button>
+              </div>
+          </div>
+        </label>
+        
 
         <label className="recipe-select-label">
           Select Icon:
@@ -195,6 +242,22 @@ const RecipeForm = ({ isOpen, onClose, onSubmit }) => {
               ))}
             </div>
           </div>
+        </label>
+        <label>
+          Number of Hearts (Rating):
+          <div className="hearts-slider-container">
+            {[...Array(10)].map((_, index) => (
+              <IoMdHeart
+                key={index}
+                className={`heart-icon ${
+                  index < numberofHearts ? 'selected' : ''
+                }`}
+                onMouseEnter={() => setNumberofHearts(index + 1)}
+                onClick={() => setNumberofHearts(index + 1)}
+              />
+            ))}
+          </div>
+          <span className="hearts-value">{numberofHearts}</span>
         </label>
         {/* Display error message */}
         {errorMessage && <p className="error-message">{errorMessage}</p>}

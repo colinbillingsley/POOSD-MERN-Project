@@ -20,6 +20,8 @@ router.route("/").post((req, res) => {
     const ingredients = req.body.ingredients;
     const details = req.body.details;
     const selectedIcon = req.body.selectedIcon;
+    const selectedStatusEffect = req.body.selectedStatusEffect;
+    const numberofHearts = req.body.numberofHearts;
     const user_id = req.body.user_id
 
     const newRecipe = new Recipe({
@@ -28,6 +30,8 @@ router.route("/").post((req, res) => {
         ingredients,
         details,
         selectedIcon,
+        selectedStatusEffect,
+        numberofHearts,
         user_id
     });
 
