@@ -10,6 +10,8 @@ import axios from 'axios'
 // home page we transition to after login
 const Home = () => {
   const [recipes, setRecipes] = useState([]);
+  const [filteredRecipes, setFilteredRecipes] = useState([]);
+  const [selectedStatusEffect, setSelectedStatusEffect] = useState('');
   const { user } = useAuthContext();
 
   useEffect(() => {
@@ -23,6 +25,21 @@ const Home = () => {
         });
     }, [user.user._id]);
 
+    useEffect(() => {
+      // Filter recipes based on the selected status effect
+      if (selectedStatusEffect) {
+        const filtered = recipes.filter(recipe => recipe.selectedStatusEffect === selectedStatusEffect);
+        setFilteredRecipes(filtered);
+      } else {
+        setFilteredRecipes(recipes);
+      }
+    }, [selectedStatusEffect, recipes]);
+
+    const resetFilters = () => {
+      // Clear the selected status effect to reset filters
+      setSelectedStatusEffect('');
+    };
+
     // if the user has added recipes, display them
   if (recipes.length > 0) {
     return (
@@ -30,8 +47,8 @@ const Home = () => {
         <Navbar />
         <h2 className='title3'>All Recipes</h2>
         <h3 className='sort-heading'>Sort by status effect:</h3>
-        <StatusButtons />
-        <Carousel recipes={recipes}/>
+        <StatusButtons setSelectedStatusEffect={setSelectedStatusEffect} resetFilters={resetFilters}/>
+        <Carousel recipes={filteredRecipes}/>
         
         <details>
           <popupdiv>
@@ -46,11 +63,11 @@ const Home = () => {
   } 
   // if the user has not added recipes, display no recipes added
   else {
+
     return (
       <div className="bg1">
         <Navbar />
         <h2 className='title3'>All Recipes</h2>
-        <h3 className='sort-heading'>Sort by status effect:</h3>
         <h2 className='no-recipes-title'>No Recipes Created!</h2>
         
         <details>

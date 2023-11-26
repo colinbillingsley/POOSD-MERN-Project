@@ -3,10 +3,14 @@ import React from "react"
 import './StatusButtons.css'
 import { motion } from 'framer-motion'
 
-const StatusButtons = ({ setSelectedStatusEffect }) => {
+const StatusButtons = ({ setSelectedStatusEffect, resetFilters }) => {
     
     const handleButtonClick = (effect) => {
         setSelectedStatusEffect(effect);
+    };
+
+    const handleResetClick = () => {
+        resetFilters();
     };
 
     return (
@@ -35,6 +39,7 @@ const StatusButtons = ({ setSelectedStatusEffect }) => {
                 >
                     Hasty
                 </motion.button>
+
                 <motion.button
 
                     whileHover = {{scale:1.3, y: -5}}
@@ -42,6 +47,14 @@ const StatusButtons = ({ setSelectedStatusEffect }) => {
                     onClick={() => handleButtonClick("Sneaky")}
                 >
                     Sneaky
+                </motion.button>
+
+                <motion.button
+                    whileHover={{ scale: 1.3, y: -5 }}
+                    transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+                    onClick={handleResetClick}
+                >
+                    Reset
                 </motion.button>
             </div>
         </div>
