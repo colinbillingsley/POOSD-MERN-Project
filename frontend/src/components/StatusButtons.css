@@ -26,6 +26,7 @@
     font-weight: 700;
 }
 
-.buttonBar button:active {
-    transform: scale(1.2);
+.selected {
+    scale: 1.3;
+    text-decoration: underline;
 }
