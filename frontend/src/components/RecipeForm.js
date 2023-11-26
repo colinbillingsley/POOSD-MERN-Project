@@ -107,7 +107,7 @@ const RecipeForm = ({ isOpen, onClose, onSubmit }) => {
     // Close the modal
     onClose();
     // Refresh the page
-    //window.location.reload();
+    window.location.reload();
 
     axios.post('http://127.0.0.1:4000/api/recipes/', newRecipe)
       .then(response => {
