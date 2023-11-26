@@ -11,6 +11,7 @@
     text-align: center;
     background: linear-gradient(to bottom, #FFA500, #FFFFFF);
 	-webkit-background-clip: text;
+	text-underline-offset: 6px;
 	-webkit-text-fill-color: transparent;
     font-size: 3em;
     font-family: 'HyliaSerif';

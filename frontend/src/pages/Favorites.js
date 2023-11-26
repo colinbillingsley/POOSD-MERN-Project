@@ -15,15 +15,18 @@ const Favorites = () => {
   const [deletion, setDeletion] = useState(false)
   const [deleteCard, setDeleteCard] = useState(null)
   const { user } = useAuthContext();
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     // Fetch recipe data from API for user
     axios.get('http://127.0.0.1:4000/api/recipes/favorites/' + user.user._id)
         .then((response) => {
         setRecipes(response.data);
+        setIsLoading(false);
         })
         .catch((error) => {
         console.error('Error fetching recipes:', error);
+        setIsLoading(false);
         });
     }, [user.user._id]);
 
@@ -54,14 +57,20 @@ const Favorites = () => {
     }
 
     // if the user has added recipes, display them
-  if (recipes.length > 0) {
     return (
       <div className="bg1">
         <Navbar />
         <h2 className='title3'>Favorite Recipes</h2>
-        <h3 className='sort-heading'>Sort by status effect:</h3>
-        <StatusButtons setSelectedStatusEffect={setSelectedStatusEffect} resetFilters={resetFilters}/>
-        <Carousel recipes={filteredRecipes} deletion={deletion} setDeletion={setDeletion} deleteCard={deleteCard} setDeleteCard={setDeleteCard}/>
+        {isLoading ? (
+          <div>Loading...</div>) : recipes.length > 0 ? (
+            <>
+            <h3 className='sort-heading'>Sort by status effect:</h3>
+          <StatusButtons setSelectedStatusEffect={setSelectedStatusEffect} resetFilters={resetFilters}/>
+          <Carousel recipes={filteredRecipes} deletion={deletion} setDeletion={setDeletion} deleteCard={deleteCard} setDeleteCard={setDeleteCard}/>
+          </>
+        ) : (
+          <h2 className='no-recipes-title'>No Favorited Recipes!</h2>
+        )}
         
         <details>
           <popupdiv>
@@ -75,24 +84,5 @@ const Favorites = () => {
     )
   } 
   // if the user has not Favorited recipes, display no recipes added
-  else {
-    return (
-      <div className="bg1">
-        <Navbar />
-        <h2 className='title3'>Favorite Recipes</h2>
-        <h2 className='no-recipes-title'>No Favorited Recipes!</h2>
-                
-        <details>
-          <popupdiv>
-              <p>
-                Drag to explore your recipes
-            </p>
-          </popupdiv>
-          <summary>How it works</summary>
-        </details>
-      </div>
-    )
-  }
-}
 
 export default Favorites
