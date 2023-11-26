@@ -4,8 +4,9 @@ import { IoMdHeart } from 'react-icons/io';
 import React, { useState } from 'react';
 import Modal from 'react-modal';
 import axios from "axios";
+import AddStatusButtons from './AddStatusButtons.js'
 import './RecipeForm.css';
-import './StatusButtons.css'
+
 import { motion } from 'framer-motion'
 
 //Image Imports
@@ -185,42 +186,9 @@ const RecipeForm = ({ isOpen, onClose, onSubmit }) => {
           />
         </label>
         <label>
-          <div className="container">
-              <div className="buttonBar">
-                  <motion.button
-                      whileHover = {{scale:1.3, y: -5}}
-                      transition={{ type: 'spring', stiffness: 300, damping: 20 }} // Adjust spring animation parameters
-                      onClick={() => handleButtonClick("Hearty")}
-                  >
-                      Hearty
-                  </motion.button>
-
-                  <motion.button
-                      whileHover = {{scale:1.3, y: -5}}
-                      transition={{ type: 'spring', stiffness: 300, damping: 20 }} // Adjust spring animation parameters
-                      onClick={() => handleButtonClick("Chilly")}
-                  >
-                      Chilly
-                  </motion.button>
-
-                  <motion.button
-                      whileHover = {{scale:1.3, y: -5}}
-                      transition={{ type: 'spring', stiffness: 300, damping: 20 }} // Adjust spring animation parameters
-                      onClick={() => handleButtonClick("Hasty")}
-                  >
-                      Hasty
-                  </motion.button>
-                  <motion.button
-
-                      whileHover = {{scale:1.3, y: -5}}
-                      transition={{ type: 'spring', stiffness: 300, damping: 20 }} // Adjust spring animation parameters
-                      onClick={() => handleButtonClick("Sneaky")}
-                  >
-                      Sneaky
-                  </motion.button>
-              </div>
-          </div>
+        <AddStatusButtons setSelectedStatusEffect={setSelectedStatusEffect}/>
         </label>
+
         
 
         <label className="recipe-select-label">

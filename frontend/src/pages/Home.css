@@ -9,13 +9,17 @@
 
 .title3 {
     text-align: center;
-    color: white;
+    background: linear-gradient(to bottom, #FFA500, #FFFFFF);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
     font-size: 3em;
     font-family: 'HyliaSerif';
     letter-spacing: 2px;
     font-weight: 200;
     margin: 10px;
-    text-shadow: 4px 3px 7px rgba(0, 0, 0, 0.7);
+    text-shadow: 5px 5px 12px rgb(255, 255, 255, 0.25);
+	text-decoration: underline wavy rgb(255, 255, 255, 0.8);
+	padding-bottom: 15px;
 }
 
 .sort-heading {

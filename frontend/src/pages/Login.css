@@ -81,7 +81,7 @@ span {
     color: white;
 }
 
-input {
+.centered-box input {
     width: 65%;
     font-family: 'Comic Sans MS';
     font-size: 1.1em;

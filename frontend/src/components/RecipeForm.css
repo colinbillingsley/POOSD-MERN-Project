@@ -4,6 +4,20 @@
   src: url('../fonts/HyliaSerif.otf');
 }
 
+input {
+  width: 75%;
+  font-family: 'Comic Sans MS';
+  font-size: .75em;
+  padding: 6px;
+  display: block;
+  margin-bottom: 16px; /* Adjust the space between inputs */
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  text-align: center;
+  margin: 10px auto;
+}
+
 .recipe-modal {
   color: white;
   display: flex;
@@ -12,13 +26,12 @@
   background: #2c2929;
   padding: 20px;
   border-radius: 8px;
+  width:auto;
   max-width: 80%;
-  max-height: 80%;
-  position: fixed;
-  top: 10%;
-  left: 20%;
-  right: 20%;
-  bottom: 10%;
+  max-height: 100%;
+  position: relative;
+  top: 5%;
+  left: 10%;
 }
 
 .recipe-form {
@@ -27,7 +40,6 @@
   width: 100%;
   max-width: 400px; /* Adjust the width as needed */
   position: relative;
-  right: 7%;
 }
 
 .recipe-select-label {
@@ -37,6 +49,7 @@
 .custom-dropdown {
   position: relative;
   display: inline-block;
+  width:400px;
 }
 
 .custom-option {
@@ -82,7 +95,11 @@
 }
 
 .icon-list {
-  max-height: 150px;
+  max-height: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-x:hidden;
   overflow-y: auto;
   border: 1px solid #ccc;
 }
@@ -125,6 +142,7 @@
 .hearts-slider-container {
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .heart-icon {
