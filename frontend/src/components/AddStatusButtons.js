@@ -18,7 +18,7 @@ const AddStatusButtons = ({ setSelectedStatusEffect, resetFilters }) => {
 
     return (
         <div className="container">
-            <div className="buttonBar">
+            <div className="buttonBar" style={{fontSize: '1em'}}>
                 <motion.button
                     className={`${selectedButton === "Hearty" ? 'selected' : ''}`}
                     whileHover={selectedButton !== "Hearty" ? { scale: 1.3, y: -5, cursor: 'pointer' } : {}}

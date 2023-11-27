@@ -72,14 +72,6 @@ const Favorites = () => {
           <h2 className='no-recipes-title'>No Favorited Recipes!</h2>
         )}
         
-        <details>
-          <popupdiv>
-              <p>
-                Drag to explore your recipes
-            </p>
-          </popupdiv>
-          <summary>How it works</summary>
-        </details>
       </div>
     )
   } 

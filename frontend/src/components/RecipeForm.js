@@ -165,6 +165,7 @@ const RecipeForm = ({ isOpen, onClose, onSubmit }) => {
             onChange={(e) => setname(e.target.value)}
             className="recipe-input"
             required={true}
+            maxLength="18"
           />
         </label>
         <label>

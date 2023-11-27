@@ -2,7 +2,10 @@
     font-family: 'HyliaSerif';
     src: url('../fonts/HyliaSerif.otf')
 }
-
+@media (max-width: 768px) {
+    /*Mobile view css settings*/
+    .buttonBar button {font-size: .7em !important;}
+}
 .container {
     margin: 0 auto;
     display: flex;
@@ -24,7 +27,6 @@
     background: none;
     font-family: 'Comic Sans MS';
     font-weight: 700;
-    font-size: 1em;
 }
 
 .selected {

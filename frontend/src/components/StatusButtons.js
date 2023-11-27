@@ -24,7 +24,7 @@ const StatusButtons = ({ setSelectedStatusEffect, resetFilters }) => {
                     whileHover={selectedButton !== "Hearty" ? { scale: 1.3, y: -5, cursor: 'pointer' } : {}}
                     transition={{ type: 'spring', stiffness: 300, damping: 20 }} // Adjust spring animation parameters
                     onClick={() => handleButtonClick("Hearty")}
-                    style = {{color: 'red'}}
+                    style = {{color: 'red', fontSize: '1.2em'}}
 
                 >
                     Hearty
@@ -35,7 +35,7 @@ const StatusButtons = ({ setSelectedStatusEffect, resetFilters }) => {
                     whileHover={selectedButton !== "Chilly" ? { scale: 1.3, y: -5, cursor: 'pointer' } : {}}
                     transition={{ type: 'spring', stiffness: 300, damping: 20 }} // Adjust spring animation parameters
                     onClick={() => handleButtonClick("Chilly")}
-                    style = {{color: '#0adaff'}}
+                    style = {{color: '#0adaff', fontSize: '1.2em'}}
                 >
                     Chilly
                 </motion.button>
@@ -45,7 +45,7 @@ const StatusButtons = ({ setSelectedStatusEffect, resetFilters }) => {
                     whileHover={selectedButton !== "Hasty" ? { scale: 1.3, y: -5, cursor: 'pointer' } : {}}
                     transition={{ type: 'spring', stiffness: 300, damping: 20 }} // Adjust spring animation parameters
                     onClick={() => handleButtonClick("Hasty")}
-                    style = {{color: 'blue'}}
+                    style = {{color: 'blue', fontSize: '1.2em'}}
                 >
                     Hasty
                 </motion.button>
@@ -56,7 +56,7 @@ const StatusButtons = ({ setSelectedStatusEffect, resetFilters }) => {
                     whileHover={selectedButton !== "Sneaky" ? { scale: 1.3, y: -5, cursor: 'pointer' } : {}}
                     transition={{ type: 'spring', stiffness: 300, damping: 20 }} // Adjust spring animation parameters
                     onClick={() => handleButtonClick("Sneaky")}
-                    style = {{color: 'purple'}}
+                    style = {{color: 'purple', fontSize: '1.2em'}}
                 >
                     Sneaky
                 </motion.button>
@@ -65,6 +65,7 @@ const StatusButtons = ({ setSelectedStatusEffect, resetFilters }) => {
                     whileHover={{ scale: 1.3, y: -5, cursor: 'pointer'}}
                     transition={{ type: 'spring', stiffness: 300, damping: 20 }}
                     onClick={handleResetClick}
+                    style = {{fontSize: '1.2em'}}
                 >
                     Reset
                 </motion.button>

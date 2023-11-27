@@ -72,14 +72,6 @@ const Home = () => {
           <h2 className='no-recipes-title'>No Saved Recipes!</h2>
         )}
         
-        <details>
-          <popupdiv>
-              <p>
-                Drag to explore your recipes
-            </p>
-          </popupdiv>
-          <summary>How it works</summary>
-        </details>
       </div>
     )
   } 

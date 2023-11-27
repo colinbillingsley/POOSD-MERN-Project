@@ -11,6 +11,7 @@
         font-size: small !important;
     }
     .fancyButton2 {font-size: small !important; height:auto !important;}
+    .nav-list {padding-left: 0 !important;}
 }
 .tabs a{
     font-family: 'HyliaSerif';
