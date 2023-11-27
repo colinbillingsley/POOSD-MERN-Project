@@ -110,7 +110,7 @@ const RecipeForm = ({ isOpen, onClose, onSubmit }) => {
     // Refresh the page
     window.location.reload();
 
-    axios.post('http://127.0.0.1:4000/api/recipes/', newRecipe)
+    axios.post('/api/recipes/', newRecipe)
       .then(response => {
         console.log('Form submitted successfully:', newRecipe);
       })

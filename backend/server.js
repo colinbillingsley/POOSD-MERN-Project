@@ -7,7 +7,7 @@ const userRoutes = require('./routes/userRoutes')
 const recipeRoutes = require('./routes/recipeRoutes')
 
   const corsOptions = {
-   origin: 'https://tearsofthanksgivingbe.onrender.com',
+   origin: ['http://tearsofthanksgiving.com', 'https://tearsofthanksgiving.com', 'tearsofthanksgiving.com'],
    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
    optionsSuccessStatus: 200
  }
@@ -23,7 +23,7 @@ app.use((req, res, next) => {
   next()
 })
 
-app.use(express.static(path.join(__dirname, 'public')));
+//app.use(express.static(path.join(__dirname, 'public')));
 
 // routes
 app.use('/api/user', userRoutes)

@@ -47,10 +47,10 @@ const signupUser = async (req, res) => {
             subject: 'Verify Your Account for Tears of Thanksgiving',
             text: ` Thanks for signing up with us at Tears of Thanksgiving.
                     Please copy and paste the following link to verify your account with us:
-                    http://${req.headers.host}/api/user/verify/${tempToken}`,
+                    https://www.tearsofthanksgiving.com/api/user/verify/${tempToken}`,
             html: ` <h2>Thanks for signing up with us at Tears of Thanksgiving.</h2>
                     <p>Please click the following link to verify your account with us:</p>
-                    <a href="http://${req.headers.host}/api/user/verify/${tempToken}">Verify Account</a>`,
+                    <a href="https://www.tearsofthanksgiving.com/api/user/verify/${tempToken}">Verify Account</a>`,
         };
 
         try {
@@ -82,7 +82,7 @@ const verifyUser = async (req, res) => {
             throw Error('User was not found')
         }
 
-        res.redirect('http://localhost:3000/verify')
+        res.redirect('https://tearsofthanksgiving.com/verify')
     } catch (error) {
         res.status(400).json({error: error.message})
     }

@@ -13,7 +13,7 @@ function getStatusColor(selectedStatusEffect) {
       case "Hearty":
         return "red";
       case "Chilly":
-        return "#0d00ff";
+        return "#0adaff";
       case "Hasty":
         return "blue";
       case "Sneaky":
@@ -26,10 +26,11 @@ const RecipeCard = ({recipe, favorite, deletion, setDeletion, deleteCard, setDel
     const [isDragged, setIsDragged] = useState(false);
     const [isFavorite, setIsFavorite] = useState(favorite);
     const { user } = useAuthContext();
+    const maxLength = 100;
 
     // delete recipe
     const handleDelete = async () => {
-      axios.delete('http://127.0.0.1:4000/api/recipes/' + user.user._id + '/' + recipe._id)
+      axios.delete('/api/recipes/' + user.user._id + '/' + recipe._id)
       .then(() => {
         // set deletion to true and grab the id of recipe
         setDeletion(true);
@@ -39,11 +40,14 @@ const RecipeCard = ({recipe, favorite, deletion, setDeletion, deleteCard, setDel
         console.error('Error fetching recipe:', error);
       });
     }
+    const containerStyle = {
+      alignItems: recipe.details.length <= maxLength ? "center" : "left",
+    };
 
     // favorite or unfavorite recipe
     const handleFavorite = async () => {
       // Fetch recipe data from API for user
-    axios.get('http://127.0.0.1:4000/api/recipes/update-favorite/' + user.user._id + '/' + recipe._id)
+    axios.get('/api/recipes/update-favorite/' + user.user._id + '/' + recipe._id)
       .then((response) => {
         const recievedRecipe = response.data[0]
         setIsFavorite(recievedRecipe.favorited)
@@ -68,23 +72,20 @@ const RecipeCard = ({recipe, favorite, deletion, setDeletion, deleteCard, setDel
           <div className="img-container">
           <img src={recipe.selectedIcon || defaultImage} alt="Pie" className="recipe-image" />
           </div>
-          <div>
+          <div className="recipe-details-container" style={containerStyle}>
             <p className="recipe-details">{recipe.details}</p>
           </div>
-          <div className="">
           <h3 className="ingredients-title">Ingredients</h3>
-            <p className="ingredients">{recipe.ingredients}</p>
+          <div className="recipe-ingredients-container">
+            <div className="ingredients">{recipe.ingredients}</div>
           </div>
           <div>
             <h3 className="status-type" style ={{ color: getStatusColor(recipe.selectedStatusEffect) }}>{recipe.selectedStatusEffect}</h3>
           </div>
           <div className="hearts-count">
-            <p>
-                {recipe.numberofHearts} <br/>
-                {[...Array(recipe.numberofHearts)].map((_, index) => (
-                  <IoMdHeart key={index} className="hearts-icon" />
-                ))}
-            </p>
+              {[...Array(recipe.numberofHearts)].map((_, index) => (
+                <IoMdHeart key={index} className="hearts-icon" />
+              ))}
           </div>
         </div>
         <div className="card-icons">

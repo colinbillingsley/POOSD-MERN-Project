@@ -19,7 +19,7 @@ const Favorites = () => {
 
   useEffect(() => {
     // Fetch recipe data from API for user
-    axios.get('http://127.0.0.1:4000/api/recipes/favorites/' + user.user._id)
+    axios.get('/api/recipes/favorites/' + user.user._id)
         .then((response) => {
         setRecipes(response.data);
         setIsLoading(false);
